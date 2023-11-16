@@ -215,6 +215,9 @@ MODULE MODULE_CREATE_SURFACE
         DEG2RAD = ACOS(-1.0) / 180
         
         OPEN(UNIT=10, FILE='config.txt', STATUS='OLD')
+
+        OPEN(UNIT=21, FILE='grids.txt', STATUS='OLD', ACTION='WRITE', POSITION='APPEND')
+        OPEN(UNIT=22, FILE='elements.txt', STATUS='OLD', ACTION='WRITE', POSITION='APPEND')      
         
         READ(10,*)C%MDIR
         READ(10,*)C%DIRS
@@ -273,12 +276,17 @@ MODULE MODULE_CREATE_SURFACE
             
         END DO
         
+        WRITE(21,* )COMP%NG
+        WRITE(22,* )COMP%NE
+        
         ALLOCATE(COMP%G(COMP%NG, 3))
         ALLOCATE(COMP%E(COMP%NE, 4))
         
         
         CLOSE(10)
         CLOSE(21)
+        CLOSE(22)
+
     
     END SUBROUTINE
     !============================================================
