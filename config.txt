@@ -1,0 +1,34 @@
+1                     Mesh Direction
+2                     Span Direction x: 1 y: 2 z: 3
+4                     Leading Edge Definition
+6.69000   0.00000   1.30200   2.228   3.000
+6.69000   1.23000   1.30200   2.228   3.000
+6.69000   6.15000   1.47381   2.228   3.000
+6.82390  10.25000   1.61699   1.337   1.000
+5                     Number of Components
+1                     Component Id
+10                     Span strips
+7                     Chord strips
+0.0000   0.1062   0.2124   0.3186   0.4248   0.5310   0.6372   0.7434                                  Chord strips
+0.1200   0.1680   0.2160   0.2640   0.3120   0.3600   0.4080   0.4560   0.5040   0.5520   0.6000       Span strips                                                                      Span Strips
+1                     Component Id
+1                     Span strips
+2                     Chord strips
+0.7700   0.8850   1.0000
+0.6000   0.6195    
+1                     Component Id
+10                    Span strips
+7                     Chord strips
+0.0000   0.1100   0.2200   0.3300   0.4400   0.5500   0.6600   0.7700   
+0.6000   0.6400   0.6800   0.7200   0.7600   0.8000   0.8400   0.8800   0.9200  0.9600  1.0000  
+2                     Component Id
+10                     Span strips
+2                     Chord strips
+0.7434   0.8717   1.0000
+0.1200   0.1680   0.2160   0.2640   0.3120   0.3600   0.4080   0.4560   0.5040   0.5520   0.6000                                                                                    Span Strips
+3                     Component Id
+8                     Span strips
+2                     Chord strips
+0.7700   0.8850   1.0000
+0.6195   0.66706   0.71463   0.76219   0.80975  0.85731   0.90488   0.95244   1.0000
+

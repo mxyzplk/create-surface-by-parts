@@ -1,0 +1,29 @@
+PROGRAM CREATE_SURFACE
+    
+    USE MODULE_CREATE_SURFACE
+    
+    TYPE(CONFIG) :: C
+    TYPE(COMPONENT) :: COMP 
+    INTEGER :: I, EVAL_NG, EVAL_NP
+    
+    OPEN(UNIT=21,FILE='grids.txt', STATUS='REPLACE')
+    OPEN(UNIT=22,FILE='elements.txt', STATUS='REPLACE')
+    OPEN(UNIT=23,FILE='panels_info.txt', STATUS='REPLACE')
+    OPEN(UNIT=24,FILE='grids_info.txt', STATUS='REPLACE')
+    CLOSE(21)
+    CLOSE(22)
+    CLOSE(23)
+    CLOSE(24)
+    
+    CALL SET_CONFIG(C, COMP)
+    EVAL_NG = 0
+    EVAL_NP = 0
+    DO I = 1, COMP%NC
+        CALL DEF_SURFACE(C, COMP%SUF(I), EVAL_NG, EVAL_NP)
+        EVAL_NG = EVAL_NG + COMP%SUF(I)%NG
+        EVAL_NP = EVAL_NP + COMP%SUF(I)%NP
+    END DO
+
+    CALL WRITE_VTK(COMP)
+    
+END PROGRAM
