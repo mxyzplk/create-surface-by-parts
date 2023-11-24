@@ -377,5 +377,22 @@ MODULE MODULE_CREATE_SURFACE
     !==================================================
     
     
+    !==================================================
+    SUBROUTINE ROT(PT, SWP, DIE, PROT)
+    
+        REAL*8, INTENT(INOUT) :: PROT(3)
+        REAL*8, INTENT(IN) :: PT(3), DIE, SWP
+        REAL*8 :: PI, DEG2RAD
+        
+        PI = ACOS(-1)
+        DEG2RAD = PI / 180
+        
+        PROT(1) = PT(1) * COS(DEG2RAD * SWP) + PT(2) * SIN(DEG2RAD * SWP) * COS(DEG2RAD * DIE) - PT(3) * SIN(DEG2RAD * DIE) * SIN(DEG2RAD * SWP)
+        PROT(2) = - PT(1) * SIN(DEG2RAD * SWP) + PT(2) * COS(DEG2RAD * SWP) * COS(DEG2RAD * DIE) - PT(3) * SIN(DEG2RAD * DIE) * COS(DEG2RAD * SWP)
+        PROT(3) = PT(2) * SIN(DEG2RAD * DIE) + PT(3) * COS(DEG2RAD * DIE)
+        
+    END SUBROUTINE
+    !==================================================
+    
     
 END MODULE
